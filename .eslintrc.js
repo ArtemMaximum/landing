@@ -6,7 +6,7 @@ module.exports = {
     "commonjs": true
   },
   "extends": [
-    "eslint:recommended", 
+    "eslint:recommended",
     "plugin:react/recommended"
   ],
   "parserOptions": {
@@ -31,7 +31,7 @@ module.exports = {
     "getter-return": [
       "error",
       {
-          allowImplicit: false
+        allowImplicit: false
       }
     ],
     "no-await-in-loop": "error",
@@ -43,7 +43,7 @@ module.exports = {
     "no-constant-condition": [
       "error",
       {
-          checkLoops: false
+        checkLoops: false
       }
     ],
     "no-control-regex": "error",
@@ -80,7 +80,7 @@ module.exports = {
     "no-invalid-regexp": "error",
     "no-irregular-whitespace": [
       "error",
-      {    
+      {
         skipStrings: true,
         skipComments: false,
         skipRegExps: true,
@@ -299,6 +299,7 @@ module.exports = {
         allowSingleLine: false
       }
     ],
+    "comma-dangle": ["error", "never"],
     "comma-spacing": [
       "error",
       {

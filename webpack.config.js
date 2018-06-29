@@ -1,4 +1,4 @@
-const { resolve, join } = require('path')
+const { resolve/* , join */ } = require('path')
 const webpack = require('webpack')
 
 const config = {
@@ -10,7 +10,7 @@ const config = {
     ]
   },
   output: {
-    path: resolve(__dirname,'public/'),
+    path: resolve(__dirname, 'public/'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
@@ -18,9 +18,7 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          'babel-loader'
-        ],
+        use: ['babel-loader'],
         exclude: '/node_modules/'
       },
       {
@@ -58,7 +56,7 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
   ]
 }
 module.exports = config
