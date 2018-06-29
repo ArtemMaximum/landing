@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import Hello from '../../src/components/Hello'
+import Hello from '../../src/old/components/Hello'
 
 jest.mock('../../src/components/Hello.css', () => {
   return jest.fn()

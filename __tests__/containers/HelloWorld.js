@@ -5,9 +5,9 @@ import { shallow, mount } from 'enzyme'
 import React from 'react'
 import thunk from 'redux-thunk'
 
-import HelloWorld from '../../src/containers/HelloWorld.js'
+import HelloWorld from '../../src/old/containers/HelloWorld.js'
 
-import reducer from '../../src/reducers'
+import reducer from '../../src/old/reducers'
 
 jest.mock('../../src/components/Hello.css', () => {
   return jest.fn()

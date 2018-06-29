@@ -1,12 +1,16 @@
 import 'babel-polyfill'
 
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
+// import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { RootTemplate } from './ui'
+import { theme, globalStyles } from './theme'
 import {
   createStore,
   compose,
-  applyMiddleware
+  applyMiddleware,
 } from 'redux'
 import thunk from 'redux-thunk'
 import _reducers from './reducers'
@@ -14,12 +18,11 @@ import matchConfig from './matchConfig'
 import {
   BrowserRouter,
   Route,
-  Switch
+  Switch,
 } from 'react-router-dom'
 
 const composeEnhancers = process.env.NODE_ENV !== 'production' &&
-typeof window !==
-'undefined' &&
+typeof window !== 'undefined' &&
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :
   compose
@@ -33,15 +36,26 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk)),
 )
 
-render(
-  <Provider store={store}>
-    <BrowserRouter location={window.location.pathname} context={{}}>
-      <Switch>
-        {
-          matchConfig.map((route, index) => <Route key={`route${index}`} {...route} />)
-        }
-      </Switch>
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
-)
+const rootRender = () => {
+  // eslint-disable-next-line no-unused-expressions
+  globalStyles()
+
+  ReactDOM.render(
+    <ThemeProvider theme={theme}>
+      <BrowserRouter location={window.location.pathname} context={{}}>
+        <RootTemplate>
+          <Provider store={store}>
+            <Switch>
+              {
+                matchConfig.map((route, index) => <Route key={`route${index}`} {...route} />)
+              }
+            </Switch>
+          </Provider>
+        </RootTemplate>
+      </BrowserRouter>
+    </ThemeProvider>,
+    document.getElementById('root')
+  )
+}
+
+rootRender()

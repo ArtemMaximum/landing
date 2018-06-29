@@ -1,25 +1,12 @@
-
-import HelloWorld from './containers/HelloWorld'
-import PreloadHelloWorld from './containers/PreloadHelloWorld'
-import JsonAPI from './containers/JsonAPI'
+import PreloadHelloWorld from './modules/containers/PreloadHelloWorld'
+// import { NotFoundPage } from './ui'
 
 const matchConfig = [
   {
-    path: '/api',
-    component: JsonAPI,
-    initState: JsonAPI.initState
-  },
-  {
-    path: '/preload',
-    component: PreloadHelloWorld,
-    initState: PreloadHelloWorld.initState
-  },
-  {
     path: '/',
-    component: HelloWorld,
-    initState: HelloWorld.initState,
-    exact: false
-  }
+    component: PreloadHelloWorld,
+    initState: PreloadHelloWorld.initState,
+  },
 ]
 
 export default matchConfig

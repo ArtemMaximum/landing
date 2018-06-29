@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'development') {
   let devMiddlewareConfig = {
     noInfo: true,
     stats: {colors: true},
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
   }
 
   app.use(devMiddleware(compiler, devMiddlewareConfig))
