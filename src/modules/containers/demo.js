@@ -11,13 +11,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {}
 }
 
-const newPage = connect(
+const DemoContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(NewPage)
 
 // initState is a function which is run before server, and keep consistency as a thunk middleware, and return a promise
-newPage.initState = (store, req, res) => {
+DemoContainer.initState = (store, req, res) => {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
       resolve()
@@ -25,4 +25,4 @@ newPage.initState = (store, req, res) => {
   }
 }
 
-export default newPage
+export default DemoContainer

@@ -3,28 +3,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 
-const BackgroundImage = styled.div`
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  position: fixed;
-  transform: perspective(1000px);
-  transform-style: preserve-3d;
-  background-size: cover;
-  background-position: center center;
-  
-  &:before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  }
-`
-
 export const RootWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +11,6 @@ export const RootWrapper = styled.div`
 
 export const RootTemplate = ({ children }) => (
   <RootWrapper>
-    <BackgroundImage />
     {children}
   </RootWrapper>
 )

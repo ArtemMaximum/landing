@@ -1,11 +1,11 @@
-import PreloadHelloWorld from './modules/containers/PreloadHelloWorld'
+import DemoContainer from './modules/containers/demo'
 // import { NotFoundPage } from './ui'
 
 const matchConfig = [
   {
     path: '/',
-    component: PreloadHelloWorld,
-    initState: PreloadHelloWorld.initState,
+    component: DemoContainer,
+    initState: DemoContainer.initState,
   },
 ]
 
