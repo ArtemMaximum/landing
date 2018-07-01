@@ -1,4 +1,4 @@
-import apis from '../../src/actions/api.js'
+import apis from '../../src/old/actions/api.js'
 
 describe('api action creator', () => {
   it('get github user', (done) => {

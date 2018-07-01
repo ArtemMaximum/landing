@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import EditableDiv from '../src/components/shared/EditableDiv';
-import Loading from '../src/components/shared/Loading';
+import EditableDiv from '../src/old/components/shared/EditableDiv';
+import Loading from '../src/old/components/shared/Loading';
 
 storiesOf('Shared Component', module)
   .add('EditableDiv', () => {

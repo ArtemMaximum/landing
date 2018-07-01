@@ -5,20 +5,23 @@ import ReactDOMServer from 'react-dom/server'
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import _reducers from './reducers'
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { RootTemplate } from './ui'
 import matchConfig from './matchConfig'
+import { theme, globalStyles } from './theme'
 import {
   StaticRouter,
   Route,
   Switch,
-  matchPath
+  matchPath,
 } from 'react-router-dom'
 
 
 function serverRender(req, res) {
   const composeEnhancers = process.env.NODE_ENV !== 'production' &&
-    typeof window !== 'undefined' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+  typeof window !== 'undefined' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :
     compose
 
@@ -27,7 +30,7 @@ function serverRender(req, res) {
     composeEnhancers(applyMiddleware(thunk))
   )
 
-  let initState;
+  let initState
   matchConfig.some(route => {
     const match = matchPath(req.url, route)
     if (match) {
@@ -44,16 +47,23 @@ function serverRender(req, res) {
 
 function renderStoreRouter(store, req, res) {
   const context = {}
+
+  globalStyles()
+
   const componentStr = ReactDOMServer.renderToString(
-    <Provider store={store}>
+    <ThemeProvider theme={theme}>
       <StaticRouter location={req.url} context={context}>
-        <Switch>
-          {
-            matchConfig.map((route, index) => <Route key={`route${index}`} {...route} />)
-          }
-        </Switch>
+        <RootTemplate>
+          <Provider store={store}>
+            <Switch>
+              {
+                matchConfig.map((route, index) => <Route key={`route${index}`} {...route} />)
+              }
+            </Switch>
+          </Provider>
+        </RootTemplate>
       </StaticRouter>
-    </Provider>
+    </ThemeProvider>
   )
   res.send(renderFullPage(componentStr, store.getState()))
 }
@@ -72,7 +82,7 @@ function renderFullPage(html, preloadedState) {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Redux Hello World</title>
+        <title>Prof-Alimp</title>
         <link rel="stylesheet" type="text/css" href=${bundleCSS}>
       </head>
       <body>

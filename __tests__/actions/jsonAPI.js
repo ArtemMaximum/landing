@@ -1,4 +1,4 @@
-import jsonAPIActionCreator from '../../src/actions/jsonAPI'
+import jsonAPIActionCreator from '../../src/old/actions/jsonAPI'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 

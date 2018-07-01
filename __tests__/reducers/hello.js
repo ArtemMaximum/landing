@@ -1,4 +1,4 @@
-import helloWorld from '../../src/reducers/hello.js'
+import helloWorld from '../../src/old/reducers/hello.js'
 
 describe('helloWorld reducer', () => {
   it('should return the initial state', (done) => {

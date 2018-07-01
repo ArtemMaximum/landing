@@ -1,4 +1,4 @@
-import apiReducer from '../../src/reducers/jsonAPI.js'
+import apiReducer from '../../src/old/reducers/jsonAPI.js'
 
 import { createStore } from 'redux'
 let store = createStore(apiReducer, {})

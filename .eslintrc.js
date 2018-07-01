@@ -299,7 +299,7 @@ module.exports = {
         allowSingleLine: false
       }
     ],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
     "comma-spacing": [
       "error",
       {
