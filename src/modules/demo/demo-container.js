@@ -3,7 +3,7 @@ import NewPage from './components/pages/DemoPage'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    message: 'well behave !!!',
+    message: 'I\'m Working!!!',
   }
 }
 
