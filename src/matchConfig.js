@@ -1,4 +1,4 @@
-import DemoContainer from './modules/containers/demo'
+import DemoContainer from './modules/demo/demo-container'
 // import { NotFoundPage } from './ui'
 
 const matchConfig = [

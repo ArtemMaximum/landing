@@ -20,4 +20,3 @@ RootTemplate.propTypes = {
 }
 
 RootTemplate.defaultProps = {}
-

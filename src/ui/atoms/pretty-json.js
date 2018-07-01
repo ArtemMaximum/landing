@@ -23,3 +23,4 @@ export const PrettyJson = ({ data }) => (
 PrettyJson.propTypes = {
   data: PropTypes.objectOf(Json).isRequired || PropTypes.arrayOf(Json).isRequired,
 }
+

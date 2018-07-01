@@ -1,3 +1,4 @@
+import styledNormalize from 'styled-normalize'
 import { injectGlobal } from 'styled-components'
 import { mediaMaxWidth } from './lib/sizes'
 
@@ -14,38 +15,40 @@ export const theme = {
     shape: '#f9f9f9',
   },
   pixels: {
-    contentWidth: 1280,
+    contentWidth: 1140,
   },
 }
 
 export const globalStyles = () => injectGlobal`
+  ${styledNormalize}
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.15;
+    font-family: Raleway, Verdana;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #website {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+  }
+
+  ${mediaMaxWidth('tablet')} {
     body, html {
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      line-height: 1.15;
-      font-family: Raleway, Verdana;
+      font-size: 14px;
     }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    #website {
-      display: flex;
-      flex-direction: column;
-      min-width: 320px;
-    }
-
-    ${mediaMaxWidth('tablet')} {
-      body, html {
-        font-size: 14px;
-      }
-    }
-  `
+  }
+`
