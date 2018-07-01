@@ -14,8 +14,11 @@ export const theme = {
     navigation: 'hsla(0,0%,100%,.8)',
     shape: '#f9f9f9',
   },
-  pixels: {
-    contentWidth: 1140,
+  points: {
+    lg: 1140,
+    md: 960,
+    sm: 720,
+    xs: 540,
   },
 }
 

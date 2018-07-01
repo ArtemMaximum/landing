@@ -9,7 +9,6 @@ export const width = {
   tabletS: 570,
   tablet: 768,
   laptop: 1024,
-  desktopS: 1140,
   desktop: 1440,
   desktop4k: 2560,
 }
