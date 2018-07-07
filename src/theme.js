@@ -3,16 +3,17 @@ import { injectGlobal } from 'styled-components'
 import { mediaMaxWidth } from './lib/sizes'
 
 
-export const theme = {
+export const themeAquamarine = {
   colors: {
-    footer: '#999999',
-    header: '#ffffff',
-    primary: '#6565d6',
-    primaryDark: '#2323ab',
+    actionColor: '#46c1be',
+    actionColorDark: '#104455',
+    textColor: '#3d3d3d',
+    secondaryTextColor: '#7f7f7f',
+    borderColor: '#d8e3eb',
+    borderColorDark: '#cccccc',
+    tooltipBg: '#3d3d3d',
   },
   backgrounds: {
-    navigation: 'hsla(0,0%,100%,.8)',
-    shape: '#f9f9f9',
   },
   points: {
     lg: 1140,
@@ -41,12 +42,23 @@ export const globalStyles = () => injectGlobal`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
   }
 
-  #website {
+  #root {
     display: flex;
     flex-direction: column;
     min-width: 320px;
+    
+    a {
+      transition: all .5s;
+    }
   }
 
   ${mediaMaxWidth('tablet')} {

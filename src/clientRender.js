@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { RootTemplate } from './ui'
-import { theme, globalStyles } from './theme'
+import { themeAquamarine, globalStyles } from './theme'
 import {
   createStore,
   compose,
@@ -41,7 +41,7 @@ const rootRender = () => {
   globalStyles()
 
   ReactDOM.render(
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeAquamarine}>
       <BrowserRouter location={window.location.pathname} context={{}}>
         <RootTemplate>
           <Provider store={store}>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import NewPage from './components/pages/DemoPage'
+import DemoPage from './pages/DemoPage'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const DemoContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewPage)
+)(DemoPage)
 
 // initState is a function which is run before server, and keep consistency as a thunk middleware, and return a promise
 DemoContainer.initState = (store, req, res) => {
