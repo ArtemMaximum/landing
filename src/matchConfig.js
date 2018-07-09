@@ -3,7 +3,7 @@ import { NotFoundPage } from './ui'
 
 const matchConfig = [
   {
-    path: '/',
+    path: '/:page?',
     exact: true,
     component: DemoContainer,
     initState: DemoContainer.initState,

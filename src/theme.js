@@ -45,6 +45,12 @@ export const globalStyles = () => injectGlobal`
     background: rgba(0, 0, 0, 0.5);
   }
   
+  ol, ul, dl {
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
   a {
     color: #007bff;
     text-decoration: none;

@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { RootTemplate } from './ui'
 import matchConfig from './matchConfig'
-import { theme, globalStyles } from './theme'
+import { themeAquamarine, globalStyles } from './theme'
 import {
   StaticRouter,
   Route,
@@ -51,7 +51,7 @@ function renderStoreRouter(store, req, res) {
   globalStyles()
 
   const componentStr = ReactDOMServer.renderToString(
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeAquamarine}>
       <StaticRouter location={req.url} context={context}>
         <RootTemplate>
           <Provider store={store}>
